@@ -12,6 +12,9 @@ $app->get('/', function () use ($app) {
 ->bind('homepage')
 ;
 
+
+$app->get('/deploy', 'Deploy::master')->bind('deploy');
+
 $app->error(function (\Exception $e, $code) use ($app) {
     if ($app['debug']) {
         return;
