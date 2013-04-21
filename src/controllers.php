@@ -13,7 +13,7 @@ $app->get('/', function () use ($app) {
 ;
 
 
-$app->get('/deploy', 'Deploy::master')->bind('deploy');
+$app->post('/deploy', 'Deploy::master')->bind('deploy');
 
 $app->error(function (\Exception $e, $code) use ($app) {
     if ($app['debug']) {
